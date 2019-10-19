@@ -171,3 +171,9 @@ current-context: local
      kubectl exec -it test-os-3826630470-jc5j4 -- /bin/bash
   
   kubectl create -f kube-dashboard.yaml
+  =============================================================
+  安装dashboard
+  kubectl apply -f http://mirror.faasx.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+  kubectl --namespace=kube-system get deployment kubernetes-dashboard
+  kubectl --namespace=kube-system get service kubernetes-dashboard
+  kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$'
